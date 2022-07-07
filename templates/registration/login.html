@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+{% load static %}
+{% load tag_library %}
+<html lang="ja" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no" />
+  <link rel="stylesheet" type="text/css" href="{% static 'css/reset.css' %}" />
+  <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}" />
+  <title>ホーム</title>
+</head>
+
+<body>
+  <div class="container mt-4">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <div id="box" class="card text-white bg-danger error" style="margin-bottom:-190px;margin-top:150px;">
+      <div class="card-body">
+        <p class="card-text" id="error">
+          ユーザ名もしくはパスワードが正しくありません。
+        </p>
+      </div>
+    </div>
+    <div class="wrapper" style="margin-top:200px;">
+      <div class="container">
+        <h1>Welcome</h1>
+
+        <form method="post" class="form" target="_frame">
+          {% csrf_token %}
+          <input type="text" name="username" id="username" placeholder="username" required maxlength=80>
+          <input type="password" name="password" id="password" placeholder="Password" maxlength=80 minlength=8>
+          <button type="submit" id="sign">Sign in</button>
+          <iframe id="frame" name="_frame" style="display:none"></iframe>
+        </form>
+        <script type="text/javascript">
+          function doRedirect() {
+
+            window.location.href = "/mypage/";
+          }
+          document.getElementById('frame').onload = function() {
+            let frame = document.getElementById("frame").contentWindow.document;
+            let danger = frame.getElementById("error");
+            if (danger == null) {
+              $('form').fadeOut(500);
+              $('.wrapper').addClass('form-success');
+              setTimeout(doRedirect, 1700);
+
+            } else {
+              let box = document.getElementById('box');
+              let changeElement = (el) => {
+                el.classList.toggle('error');
+              }
+              changeElement(box);
+            }
+
+          };
+        </script>
+      </div>
+    </div>
+    <ul class="bg-bubbles">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,98 @@
+<!-- ボタン・リンククリック後に表示される画面の内容 -->
+<div class="modal fade" id="testModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content" style="border-radius: 20px;">
+      <div class="modal-body">
+        <form action="{% url 'index' %}" method="post">{% csrf_token %}
+        <input type="hidden" name="url" value="{{ request.path }}" id="id_url">
+          <div class="cancel-btn">
+            <button type="button" data-dismiss="modal" class="round_btn"></button>
+          </div>
+          {% if status == 'complete' %}
+          <h4 class="sub-comp">送信が完了しました！</h4>
+          {% else %}
+          <div class="title-group">
+            <h4 id="myModalLabel">問い合わせ</h4>
+            {% if status == 'error'　%}
+            <h4 class="error-message" id="error_text">有効なメールアドレスを入力してください。</h4>
+            <style>
+              input[type="email"] {
+                background-color: #FADBDA;
+                transition: all .5s;
+              }
+
+              input[type="email"]:focus {
+                background-color: white;
+              }
+            </style>
+            <script>
+              function inputChange() {
+                let senderElement = document.getElementById("id_sender")
+                let errorElement = document.getElementById("error_text")
+                senderElement.style.backgroundColor = "white";
+                errorElement.style.cssText = "opacity: 0;";
+              }
+            </script>
+            {% endif %}
+          </div>
+          <div class="container">
+            <div class="input-group">
+              <label for="id_subject" class="label-subject">件名</label>
+              <input type="text" name="subject" value="{{ subject }}" maxlength="100" class="input-subject" required id="id_subject">
+            </div>
+            <div class="input-group">
+              <label for="id_message" class="label-message">内容</label>
+              <textarea name="message" cols="40" rows="5" class="input-message" required id="id_message">{{ message }}</textarea>
+            </div>
+            <div class="check-group">
+              <input type="checkbox" name="myself" class="input-myself" id="id_myself">
+              <label for="id_myself" class="label-myself">自分にも同じ内容を送る</label>
+            </div>
+            <div class="input-group">
+              <label for="id_sender" class="label-sender">送信先メールアドレス</label>
+              <input type="email" name="sender" value="{{ sender }}" class="input-sender" id="id_sender" oninput="inputChange();">
+            </div>
+          </div>
+          <input type="submit" value="送信">
+          {% endif %}
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  {% if status == 'error' or status == 'complete' %}
+  window.onload = function () { // ページ読み込み時に実行する無名関数
+    document.getElementById("key_btn").click();
+  }
+  {% endif %}
+  let checkElement = document.getElementById("id_myself");
+  let senderInput = document.getElementById("id_sender");
+  if ("{{ myself }}" == "True") {
+    checkElement.checked = true;
+    senderInput.disabled = false;
+    senderInput.required = true;
+  } else {
+    checkElement.checked = false;
+    senderInput.disabled = true;
+    senderInput.required = false;
+    senderInput.style.cssText = "background-color:#CCCCCC;cursor:not-allowed;";
+  }
+  checkElement.addEventListener('change', () => {
+    if (checkElement.checked) {
+      senderInput.disabled = false;
+      senderInput.required = true;
+      senderInput.style.cssText = "background-color:white;";
+    } else {
+      senderInput.disabled = true;
+      senderInput.value = '';
+      senderInput.required = false;
+      senderInput.style.cssText = "background-color:#CCCCCC;cursor:not-allowed;";
+      {% if status == 'error' %}
+      let errorText = document.getElementById("error_text")
+      errorText.style.cssText = "opacity: 0;";
+      {% endif %}
+    }
+  });
+</script>
+</div>

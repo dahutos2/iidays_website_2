@@ -1,0 +1,326 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
+@charset "UTF-8";
+
+/*==============================All*/
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+  font-size: 62.5%;
+  height: auto;
+}
+
+body {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 1.6rem;
+  height: auto;
+  color: #797e81;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:visited {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+ul li {
+  list-style: none;
+}
+
+/*---------------------------ローディングー*/
+
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color:#fff;  /* 背景カラー */
+  z-index: 9999;  /* 一番手前に */
+  pointer-events: none;  /* 他の要素にアクセス可能にするためにポインターイベントは無効に */
+  opacity: 0;  /* 初期値 : 透過状態 */
+  -webkit-transition: opacity 1.5s ease 1.5s;
+  -o-transition: opacity 1.5s ease 1.5s;
+  transition: opacity 1.5s ease 1.5s;
+}
+
+body.fadeout::after {
+  opacity: 1;
+}
+
+
+/*---------------------------ヘッダー*/
+main {
+  padding-top: 750px;
+  font-family: arial;
+  background: #eee;
+  min-height: 100%;
+}
+
+.app-header {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  color: #fff;
+  height: 750px;
+  -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0);
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0);
+  z-index: 1000;
+}
+
+.header-content {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.app-toolbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  height: 8rem;
+  width: 40rem;
+  padding: 0 16px;
+  pointer-events: none;
+}
+
+#large-toolbar {
+  position: absolute;
+  bottom: 0;
+  -webkit-transform-origin: left top;
+      -ms-transform-origin: left top;
+          transform-origin: left top;
+  margin-bottom: 16px;
+  width: 100%;
+}
+
+.small-title,
+.large-title {
+  -webkit-transform-origin: left top;
+      -ms-transform-origin: left top;
+          transform-origin: left top;
+  white-space: nowrap;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -ms-flex-preferred-size: 1e-9px;
+      flex-basis: 1e-9px;
+  overflow: hidden;
+  line-height: 1.5;
+  position: relative;
+}
+
+.small-title {
+  margin-left: 14px;
+  opacity: 0;
+}
+
+.small-title a {
+  cursor: pointer;
+}
+
+.small-title a img {
+  height: 4.2rem;
+  width: 30rem;
+}
+
+.large-title {
+  will-change: transform, opacity;
+  margin-left: 64px;
+}
+
+.large-title a {
+  cursor: pointer;
+}
+
+.large-title a img {
+  height: 5.6rem ;
+  width: 40rem;
+}
+
+.background-container {
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.background {
+  pointer-events: none;
+  position: absolute;
+  background-size: cover;
+  height: 100%;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  will-change: transform, opacity;
+}
+
+#background-back {
+  background-image: url(../images/background2.webp);
+  background-position: left center;
+  opacity: 0;
+}
+
+#background-front {
+  background-image: url(../images/top_image.webp);
+  background-position: center bottom;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+
+/*#background-back.bg-lazy {*/
+/*    background-image: none!important;*/
+/*}*/
+
+/*#background-front.bg-lazy {*/
+/*    background-image: none!important;*/
+/*}*/
+
+.sns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  margin-right: 50px;
+  margin-top: -60px;
+  gap: 0px 50px;
+}
+
+.sns li a {
+  cursor: pointer;
+}
+
+.sns li a img {
+  width: 40px;
+  height: 40px;
+}
+
+/*iPad用のスタイル */
+@media screen and (min-width:556px) and (max-width:800px) {
+  main {
+    padding-top: 600px;
+  }
+  .app-header {
+    height: 600px;
+  }
+
+  .app-toolbar {
+    height: 6rem;
+    width: 40rem;
+  }
+
+  .small-title img{
+    height: 3rem;
+    width: 20rem;
+  }
+
+  .large-title img{
+    height: 4rem;
+    width: 26.5rem;
+  }
+  .sns {
+    margin-top: -50px;
+  }
+}
+/* スマホ用のスタイル */
+@media screen and (max-width: 555px) {
+  main {
+    padding-top: 200px;
+  }
+  .app-header {
+    height: 200px;
+  }
+
+  .app-toolbar {
+    height: 60px;
+    width: 200px;
+  }
+
+  #large-toolbar {
+    width: 270px;
+  }
+
+  #small-toolbar {
+    width: 205px;
+    margin-left: -14px;
+  }
+
+  #large-title {
+    height: 60px;
+  }
+
+  #small-title {
+    height: 40px;
+  }
+
+  .small-title a img{
+    height: 38px;
+    width: 100%;
+  }
+
+  .large-title {
+    margin-left: 0px;
+  }
+
+  .sns {
+    margin-top: -49px;
+    margin-right: 20px;
+    gap: 0px 20px;
+  }
+}

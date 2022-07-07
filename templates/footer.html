@@ -1,0 +1,43 @@
+{% load static %}
+{% include 'modal.html' %}
+<div class="to-top" role="region" aria-label="このページのトップに戻る">
+  <div class="inner">
+    <a href="#app-header">
+      <svg xmlns="http://www.w3.org/2000/svg" width="18.881" height="10.491" viewBox="0 0 18.881 10.491">
+        <title>このページのトップへ</title>
+        <path d="M32.38,28.98,24,20.61,15.62,28.98,14.56,27.92,24,18.49l9.44,9.43Z" transform="translate(-14.56 -18.49)" fill="#fff"></path>
+      </svg>
+    </a>
+  </div>
+</div>
+<footer id="footer">
+    <div id="footer_contact">
+      <h2><span class="en">Contact</span><br>
+      </h2>
+      <div class="innr">
+          <div class="footer-link-content">
+            <button id="key_btn" class="link-btn" type="button" data-toggle="modal" data-target="#testModal">
+                お問合せはこちら
+            </button>
+          </div>
+        <div class="tell-content">
+          <p class="footer_contact_tel_title">お電話でのお問い合わせはこちら</p>
+          <div class="telBox">
+              <span class="tel"><i class="fas fa-phone"></i><a href="tel:00000000000" class="telme">000-0000-0000</a>
+              </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-nav innr">
+    <div id="adress">
+        <div><i class="fas fa-map-marker-alt"></i>東京都瀬田川区000-00</div>
+    </div>
+    <div id="policy">
+        <div><a href="{% static 'images/privacy_policy.pdf' %}" download="privacy_policy.pdf" class="btn">
+            <span>プライバシーポリシー</span>
+        </a></div>
+    </div>
+    </div>
+    <p id="copy"><span>&copy; 2020 IIDays Inc.</span></p>
+  </footer>

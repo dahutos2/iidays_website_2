@@ -1,0 +1,7 @@
+django==3.2.3
+gunicorn
+dj-database-url
+pillow
+python-dotenv
+psycopg2-binary==2.8.6
+django-widget-tweaks
