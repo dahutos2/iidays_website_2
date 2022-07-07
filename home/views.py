@@ -32,6 +32,9 @@ class Index(ListView):
 
             if myself:
                 recipients.append(sender)
+            else:
+                if "" != sender:
+                    return HttpResponse('無効な操作が見つかりました。')
             try:
                 send_mail(subject, message, sender, recipients)
             except BadHeaderError:
