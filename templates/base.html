@@ -1,10 +1,12 @@
 <!doctype HTML>
 {% load static %}
-<html lang="ja" dir="ltr">
+<html lang="ja" dir="ltr" prefix="og: http://ogp.me/ns# website: http://ogp.me/ns/website#">
 
 <head prefix="og: http://ogp.me/ns# website: http://ogp.me/ns/website#">
   <meta charset="utf-8">
 　<meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- IE互換性のモード -->
+  <meta http-equiv="Cache-Control" content="max-age=0">
+　<meta http-equiv="Expires" content="Mon, 26 Jul 1997 05:00:00 GMT">
   <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no" />
   <meta name='robots' content='max-image-preview:large' /><!-- ビューポートの幅に合わせたプレビュー画像が表示 -->
   <meta name="thumbnail" content="https://iidays.herokuapp.com{% static 'images/top_image.png' %}" /><!-- Webサイトの検索結果に表示する縮小画像を指定 -->
@@ -41,7 +43,10 @@
   {% block extrastyle %}{% endblock %}
 </head>
 
-<body class="fadeout">
+<body>
+  <div id="white" class="fadeout"></div>
+  <div class="left"><div id="left"></div></div>
+  <div class="right"><div id="right"></div></div>
   <main id="main">
     <header id="app-header" class="app-header">
       <div class="background-container">
@@ -70,6 +75,7 @@
     </div>
   </main>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js" integrity="sha384-IEc/+MsamgT27OBODvDOuBIEae9ncji8P9p3YFhL8IcUUhyhabOWsASnyQFX/j9l" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js" integrity="sha384-d+UOwmNNIC7V4izkTAKSXzWhjC2GxiS9PTykO1XdOPC3nc2z65UOS7SP6QdKPA70" crossorigin="anonymous"></script>
   <script src="{% static 'js/base.js' %}"></script>
   <!--<script src="{% static 'js/lazy.js' %}"></script>-->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -82,7 +88,7 @@
       }
     });
     $(window).on('load', function() {
-        $('body').removeClass('fadeout'); // 0.8秒後に取得したURLに遷移
+        $('#white').removeClass('fadeout');
     });
     $(function() {
       // 電話リンク(tel)とハッシュリンク(#)と別ウィンドウでページを開く場合はスルー
@@ -91,8 +97,8 @@
           e.preventDefault(); // ナビゲートをキャンセル
           url = $(this).attr('href'); // 遷移先のURLを取得
           if (url !== '') {
-            $('body').addClass('fadeout'); // bodyに class="fadeout"を挿入
-              window.location = url; // 0.8秒後に取得したURLに遷移
+            $('#white').addClass('fadeout'); // #whiteに class="fadeout"を挿入
+              window.location = url; // 
           }
           return false;
         }
