@@ -11,14 +11,14 @@
   <meta name='robots' content='max-image-preview:large' /><!-- ビューポートの幅に合わせたプレビュー画像が表示 -->
   <meta name="thumbnail" content="https://iidays.herokuapp.com{% static 'images/top_image.png' %}" /><!-- Webサイトの検索結果に表示する縮小画像を指定 -->
 
-　<title>{% block title %}タイトル{% endblock %}</title>
+　<title>{% block title %}IIDAYS(イーデイズ){% endblock %}</title>
   <meta name="description" content="会社説明">
   <link rel="canonical" href="https://iidays.herokuapp.com/" /><!-- URL正規化 -->
   <link rel='dns-prefetch' href="/iidays.herokuapp.com/" /><!-- DNSルックアップを事前に強制 -->
 
   <meta property="og:locale" content="ja_JP" />
-  <meta property="og:site_name" content="サイト名">
-  <meta property="og:title" content="タイトル" />
+  <meta property="og:site_name" content="IIDAYS(イーデイズ)">
+  <meta property="og:title" content="IIDAYS(イーデイズ)" />
   <meta property="og:description" content="会社説明" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://iidays.herokuapp.com/" />
@@ -27,7 +27,7 @@
   <meta property="og:image:height" content="665" />
   <meta property="og:image:type" content="image/png" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:site" content="@ツイッターユーザー名" />
+  {% comment %} <meta name="twitter:site" content="@ツイッターユーザー名" /> {% endcomment %}
 
 　<meta name="msapplication-TileImage" content="https://iidays.herokuapp.com{% static 'images/top_image.png' %}" /><!-- Windowsピン留め画像 -->
 　<link rel="apple-touch-icon" sizes="180x180" href="{% static 'images/top_image.png' %}"/><!-- Android向けのアイコン（背景を透過） -->
