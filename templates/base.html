@@ -63,8 +63,8 @@
           <div id="large-title" class="large-title"><a href="{% url 'index' %}"><img src="{% static 'images/main_logo.webp' %}" alt="logo"></a></div>
         </div>
         <ul class="sns" id="sns-icons">
-          <li><a href="/"><img src="{% static 'images/icon_tw_w.svg' %}" alt="twitter"></a></li>
-          <li><a href="/"><img src="{% static 'images/icon_in_w.svg' %}" alt="instagram"></a></li>
+          <li><a href="" class="disabled"><img src="{% static 'images/icon_tw_w.svg' %}" alt="twitter"></a></li>
+          <li><a href="" class="disabled"><img src="{% static 'images/icon_in_w.svg' %}" alt="instagram"></a></li>
         </ul>
       </div>
     </header>
@@ -91,6 +91,9 @@
         $('#white').removeClass('fadeout');
     });
     $(function() {
+      $('a.disabled').click(function(){
+        return false;
+        });
       // 電話リンク(tel)とハッシュリンク(#)と別ウィンドウでページを開く場合はスルー
       $('a:not([href^="tel:"]):not([href^="/static"]):not([href^="#"]):not([target])').on('click', function(e) {
         if (window.performance.navigation.type === 1) {
