@@ -1,3 +1,4 @@
 {
-  "python.pythonPath": "/Users/okumuradaichi/opt/anaconda3/envs/iidays/bin/python"
+  "python.pythonPath": "/Users/okumuradaichi/opt/anaconda3/envs/iidays/bin/python",
+  "diffEditor.codeLens": true
 }

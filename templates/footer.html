@@ -12,14 +12,14 @@
 </div>
 <footer id="footer">
     <div id="footer_contact">
-      <h2><span class="en">Contact</span><br>
-      </h2>
+      {% comment %} <h2><span class="en">Contact</span><br>
+      </h2> {% endcomment %}
       <div class="innr">
-          <div class="footer-link-content">
+          {% comment %} <div class="footer-link-content">
             <button id="key_btn" class="link-btn" type="button" data-toggle="modal" data-target="#testModal">
                 お問合せはこちら
             </button>
-          </div>
+          </div> {% endcomment %}
         <div class="tell-content">
           <p class="footer_contact_tel_title">お電話でのお問い合わせはこちら</p>
           <div class="telBox">
@@ -27,11 +27,23 @@
               </span>
           </div>
         </div>
+        <div class="mail-content">
+          <p class="footer_contact_mail_title">メールでのお問い合わせはこちら</p>
+          <div class="mailBox">
+              <span class="mail"><i class="fas fa-envelope"></i><a href="mailto:iida08iidays@gmail.com" class="mailme">iida08iidays@gmail.com</a>
+              </span>
+          </div>
+        </div>
+        <div class="site-content">
+          <a class="button" href="https://www.amazon.com/sp?seller=A1D6J9Q8UCXAJD" >
+            <span class="button__text">EC運営サイトはこちら</span>
+          </a>
+        </div>
       </div>
     </div>
     <div class="footer-nav innr">
     <div id="adress">
-        <div><i class="fas fa-map-marker-alt"></i>大阪府堺市西区鳳南町５町490-7</div>
+        <div><i class="fas fa-map-marker-alt"></i>大阪府堺市西区鳳南町5丁490-7</div>
     </div>
     <div id="policy">
         <div><a href="{% static 'images/privacy_policy.pdf' %}" download="privacy_policy.pdf" class="btn">
