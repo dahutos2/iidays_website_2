@@ -28,6 +28,7 @@ DEBUG = False
 ALLOWED_HOSTS = ['iidays-co.com']
 # ALLOWED_HOSTS = ['*']
 
+SECURE_SSL_REDIRECT = True
 
 # Application definition
 
