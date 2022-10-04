@@ -1,5 +1,6 @@
 @charset "UTF-8";
 
+/* 基本設定 */
 * {
     box-sizing: border-box
 }
@@ -55,6 +56,9 @@ ul li {
     list-style: none
 }
 
+/* ページ遷移アニメーション */
+
+/* ページ遷移の際に一旦真っ白になる */
 #white {
     position: fixed;
     top: 0;
@@ -72,6 +76,8 @@ ul li {
     opacity: 1;
     display: block
 }
+
+/* 真ん中から左の幕 */
 
 .left {
     position: fixed;
@@ -91,6 +97,8 @@ ul li {
     width: 100%;
     height: 100%
 }
+
+/* 真ん中から右の幕 */
 
 .right {
     position: fixed;
@@ -122,12 +130,16 @@ ul li {
     }
 }
 
+/* メインコンテンツ */
+
 main {
     padding-top: 750px;
     font-family: arial;
     background: #eee;
     min-height: 100%
 }
+
+/* ヘッダー */
 
 .app-header {
     display: block;
@@ -148,8 +160,6 @@ main {
 }
 
 .app-toolbar {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -159,6 +169,8 @@ main {
     padding: 0 16px;
     pointer-events: none
 }
+
+/* 元の文字 */
 
 #large-toolbar {
     position: absolute;
@@ -178,6 +190,8 @@ main {
     line-height: 1.5;
     position: relative
 }
+
+/* 変化後の文字 */
 
 .small-title {
     margin-left: 14px;
@@ -207,6 +221,8 @@ main {
     width: 40rem
 }
 
+/* 背景画像 */
+
 .background-container {
     position: absolute;
     overflow: hidden;
@@ -228,11 +244,15 @@ main {
     will-change: transform, opacity
 }
 
+/* 変化後画像 */
+
 #background-back {
     background-image: url(../images/background2.webp);
     background-position: left center;
     opacity: 0
 }
+
+/* 変化前画像 */
 
 #background-front {
     background-image: url(../images/top_image.webp);
@@ -241,6 +261,8 @@ main {
     width: 100%;
     height: 100%
 }
+
+/* ヘッダー右上SNS */
 
 .sns {
     display: -webkit-box;
@@ -263,6 +285,7 @@ main {
     cursor: not-allowed
 }
 
+/* SNSにマウスオーバー時 */
 .sns li a.disabled:hover:before {
     content: '作成中です。';
     position: absolute;
@@ -276,8 +299,6 @@ main {
     text-align: center;
     left: 50%;
     bottom: -250%;
-    -webkit-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
     transform: translateX(-50%);
     width: 100px
 }

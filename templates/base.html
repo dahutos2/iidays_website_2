@@ -170,8 +170,13 @@
       integrity="sha384-d+UOwmNNIC7V4izkTAKSXzWhjC2GxiS9PTykO1XdOPC3nc2z65UOS7SP6QdKPA70"
       crossorigin="anonymous"
     ></script>
-    <script src="{% static 'js/base.js' %}"></script>
-    <!--<script src="{% static 'js/lazy.js' %}"></script>-->
+    {% comment %}
+    <script src="{% static 'js/base-page-move.js' %}"></script>
+    {% endcomment %}
+    <script src="{% static 'js/base-header-change.js' %}"></script>
+    {% comment %}
+    <script src="{% static 'js/lazy.js' %}"></script>
+    {% endcomment %}
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
       integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"

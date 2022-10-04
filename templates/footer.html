@@ -1,4 +1,7 @@
 {% load static %}
+{% block extrastyle %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/footer.css' %}" />
+{% endblock %}
 {% include 'modal.html' %}
 <div class="to-top" role="region" aria-label="このページのトップに戻る">
   <div class="inner">
@@ -12,33 +15,36 @@
 </div>
 <footer id="footer">
     <div id="footer_contact">
-      {% comment %} <h2><span class="en">Contact</span><br>
-      </h2> {% endcomment %}
+       {% comment %} <h2><span class="en">Contact</span><br>
+      </h2>  {% endcomment %}
       <div class="innr">
-          {% comment %} <div class="footer-link-content">
+          <div class="footer-link-content">
             <button id="key_btn" class="link-btn" type="button" data-toggle="modal" data-target="#testModal">
                 お問合せはこちら
             </button>
-          </div> {% endcomment %}
+          </div>
+      <div class="middle">
         <div class="tell-content">
           <p class="footer_contact_tel_title">お電話でのお問い合わせはこちら</p>
+          <div class="box"></div>
           <div class="telBox">
               <span class="tel"><i class="fas fa-phone"></i><a href="tel:09062089821" class="telme">090-6208-9821</a>
               </span>
           </div>
         </div>
-        <div class="mail-content">
+        {% comment %} <div class="mail-content">
           <p class="footer_contact_mail_title">メールでのお問い合わせはこちら</p>
           <div class="mailBox">
               <span class="mail"><i class="fas fa-envelope"></i><a href="mailto:iida08iidays@gmail.com" class="mailme">iida08iidays@gmail.com</a>
               </span>
           </div>
-        </div>
+        </div> {% endcomment %}
         <div class="site-content">
           <a class="button" href="https://www.amazon.com/sp?seller=A1D6J9Q8UCXAJD" >
             <span class="button__text">EC運営サイトはこちら</span>
           </a>
         </div>
+      </div>
       </div>
     </div>
     <div class="footer-nav innr">

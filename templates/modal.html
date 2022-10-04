@@ -1,7 +1,11 @@
+{% load static %}
+{% block extrastyle %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/modal.css' %}" />
+{% endblock %}
 <!-- ボタン・リンククリック後に表示される画面の内容 -->
 <div class="modal fade" id="testModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content" style="border-radius: 20px;">
+  <div class="modal-dialog modal-container">
+    <div class="modal-content modal-inner">
       <div class="modal-body">
         <form action="{% url 'index' %}" method="post">{% csrf_token %}
         <input type="hidden" name="url" value="{{ request.path }}" id="id_url">
@@ -10,6 +14,11 @@
           </div>
           {% if status == 'complete' %}
           <h4 class="sub-comp">送信が完了しました！</h4>
+          <style>
+              .modal-inner {
+                height: inherit;
+              }
+          </style>
           {% else %}
           <div class="title-group">
             <h4 id="myModalLabel">問い合わせ</h4>
@@ -25,17 +34,9 @@
                 background-color: white;
               }
             </style>
-            <script>
-              function inputChange() {
-                let senderElement = document.getElementById("id_sender")
-                let errorElement = document.getElementById("error_text")
-                senderElement.style.backgroundColor = "white";
-                errorElement.style.cssText = "opacity: 0;";
-              }
-            </script>
             {% endif %}
           </div>
-          <div class="container">
+          <div class="input-container">
             <div class="input-group">
               <label for="id_subject" class="label-subject">件名</label>
               <input type="text" name="subject" value="{{ subject }}" maxlength="100" class="input-subject" required id="id_subject">
@@ -60,7 +61,21 @@
     </div>
   </div>
 </div>
+</div>
+{% block extrajs %}
 <script>
+  function inputChange() {
+    let senderElement = document.getElementById("id_sender")
+    let errorElement = document.getElementById("error_text")
+    if (senderElement == null) {
+      return;
+    }
+    senderElement.style.backgroundColor = "white";
+    if (errorElement == null) {
+      return;
+    }
+    errorElement.style.cssText = "opacity: 0;";
+  }
   {% if status == 'error' or status == 'complete' %}
   window.onload = function () { // ページ読み込み時に実行する無名関数
     document.getElementById("key_btn").click();
@@ -95,4 +110,4 @@
     }
   });
 </script>
-</div>
+{% endblock %}
