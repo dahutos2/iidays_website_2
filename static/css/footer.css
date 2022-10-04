@@ -205,7 +205,7 @@ footer i {
     justify-content: end;
 }
 
-.button {
+.site-content .button {
     position: relative;
     display: inline-block;
     background-color: #fff;
@@ -221,7 +221,7 @@ footer i {
     cursor: pointer
 }
 
-.button__text {
+.site-content .button__text {
     position: relative;
     display: flex;
     justify-content: center;
@@ -235,15 +235,15 @@ footer i {
     z-index: 1
 }
 
-.button:after,
-.button:before {
+.site-content .button:after,
+.site-content .button:before {
     position: absolute;
     content: "";
     display: block;
     background-color: #0e192d
 }
 
-.button:before {
+.site-content .button:before {
     top: 0;
     left: 0;
     width: 100%;
@@ -252,27 +252,27 @@ footer i {
     transform-origin: right
 }
 
-.button:after {
+.site-content .button:after {
     top: 50%;
     right: -20px;
     width: 60px;
     height: 1px
 }
 
-.button:hover {
+.site-content .button:hover {
     background-color: #0e192d
 }
 
-.button:hover .button__text {
+.site-content .button:hover .button__text {
     color: #fff
 }
 
-.button:hover:after,
-.button:hover:before {
+.site-content .button:hover:after,
+.site-content .button:hover:before {
     background-color: #fff
 }
 
-.button:hover:before {
+.site-content .button:hover:before {
     top: 0;
     left: 0;
     width: 100%;
@@ -281,7 +281,7 @@ footer i {
     transform-origin: right
 }
 
-.button:hover:after {
+.site-content .button:hover:after {
     top: 50%;
     right: 20px;
     width: 25px;
@@ -332,13 +332,14 @@ footer i {
 }
 
 /* スマフォ */
-@media screen and (max-width:500px) {
+@media screen and (max-width:600px) {
     .footer-link-content {
         margin-top: 0;
     }
 
     button.link-btn {
-        height: 60px
+        height: 60px;
+        font-size: 1.6rem;
     }
 
     .site-content {
