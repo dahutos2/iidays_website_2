@@ -1,5 +1,4 @@
 // ヘッダーアニメーション
-
 TweenLite.defaultEase = Linear.easeNone;
 let header = document.querySelector("#app-header");
 let bgBack = document.querySelector("#background-back");

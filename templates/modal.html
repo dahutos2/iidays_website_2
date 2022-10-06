@@ -63,51 +63,16 @@
 </div>
 </div>
 {% block extrajs %}
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script src="{% static 'js/modal.js' %}"></script>
 <script>
-  function inputChange() {
-    let senderElement = document.getElementById("id_sender")
-    let errorElement = document.getElementById("error_text")
-    if (senderElement == null) {
-      return;
-    }
-    senderElement.style.backgroundColor = "white";
-    if (errorElement == null) {
-      return;
-    }
-    errorElement.style.cssText = "opacity: 0;";
-  }
   {% if status == 'error' or status == 'complete' %}
   window.onload = function () { // ページ読み込み時に実行する無名関数
     document.getElementById("key_btn").click();
   }
   {% endif %}
-  let checkElement = document.getElementById("id_myself");
-  let senderInput = document.getElementById("id_sender");
-  if ("{{ myself }}" == "True") {
-    checkElement.checked = true;
-    senderInput.disabled = false;
-    senderInput.required = true;
-  } else {
-    checkElement.checked = false;
-    senderInput.disabled = true;
-    senderInput.required = false;
-    senderInput.style.cssText = "background-color:#CCCCCC;cursor:not-allowed;";
-  }
-  checkElement.addEventListener('change', () => {
-    if (checkElement.checked) {
-      senderInput.disabled = false;
-      senderInput.required = true;
-      senderInput.style.cssText = "background-color:white;";
-    } else {
-      senderInput.disabled = true;
-      senderInput.value = '';
-      senderInput.required = false;
-      senderInput.style.cssText = "background-color:#CCCCCC;cursor:not-allowed;";
-      {% if status == 'error' %}
-      let errorText = document.getElementById("error_text")
-      errorText.style.cssText = "opacity: 0;";
-      {% endif %}
-    }
-  });
+  checkedMyself("{{ myself }}" == "True");
+  addCheckedEvent("{{ status }}" == "error");
 </script>
 {% endblock %}
