@@ -6,151 +6,153 @@
 <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}" />
 {% endblock %}
 {% block main %}
-      <div class="main-contents">
-        <section class="intro-contents delayScroll">
-          {% comment %} <div class="wrapper">
-            <div class="image">
-              <video autoplay playsinline muted loop preload poster="{% static 'images/sea.webp' %}">
-                <source src="{% static 'images/sea.webm' %}" type="video/mp4" />
-              </video>
-            </div>
-            <svg viewBox="0 0 250 200" preserveAspectRatio="xMidYMid
-             slice">
-              <mask id="mask" x="0" y="0" width="100%" height="200px">
-                <rect x="0" y="0" width="100%" height="100%" />
-                <text x="20" y="110">Introduce</text>
-              </mask>
-              <rect x="0" y="0" width="100%" height="200px" />
-            </svg>
-          </div> {% endcomment %}
-          <div class="intro-image">
-            <div class="front">
-              <img src="{% static 'images/pc-contents.webp' %}" alt="PC">
-            </div>
-            <div class="back">
-              <img src="{% static 'images/track-contents.webp' %}" alt="Track">
-            </div>
-          </div>
-          <div class="intro-innr">
-            <h2 class="intro-heading">
-              <span class="intro-heading-contents">会社概要</span>
-            </h2>
-            <h3 class="intro-main">
-              <div class="intro-main-primary">設立年月　　　2021年3月</div>
-              <div class="block"></div>
-              <div class="intro-main-secondary">代表取締役　　飯田裕也</div>
-              <div class="block"></div>
-              <div class="intro-main-tertiary">年商　　　　　4000 万円<div/>
-              <div class="block"></div>
-              <div class="intro-main-tertiary">事業内容　　　EC 運営、処分品買取<div/>
-            </h3>
-          </div>
+<div class="main-contents">
+  <section class="intro-contents delayScroll">
+    {% comment %} <div class="wrapper">
+      <div class="image">
+        <video autoplay playsinline muted loop preload poster="{% static 'images/sea.webp' %}">
+          <source src="{% static 'images/sea.webm' %}" type="video/mp4" />
+        </video>
       </div>
-      </section>
-      <section class="serv-contents">
-        <div class="serve-main">
-          <div class="delayScroll">
-            <div class="serv-header">
-              <h2 class="serv-heading">
-                <span class="serv-heading-contents">サービス</span>
-              </h2>
-            </div>
-            <div class="innr">
-              <div class="serv-main-contents primary">
-                <h4>
-                  <div>-01</div>
-                </h4>
-                <div class="block"></div>
-                <h3>
-                  EC 運営
-                </h3>
-                <div class="block"></div>
-                <div class="serv-main-sentence">
-                  <div>　日用品を中心として、</div>
-                  <div>　家電,食品の幅広く販売しております。</div>
-                  <div class="serv-url"><a href="https://www.amazon.com/sp?seller=A1D6J9Q8UCXAJD">ECサイトへ</a>　</div>
-                </div>
-              </div>
-              <div class="serv-image-primary">
-                <img src="{% static 'images/pc-contents2.webp' %}" alt="PC2">
-              </div>
-            </div>
-          </div>
-          <div class="innr delayScroll">
-            <div class="serv-main-contents secondary">
-              <h4>
-                <div>-02</div>
-              </h4>
-              <div class="block"></div>
-              <h3>
-                処分品買取
-              </h3>
-              <div class="block"></div>
-              <div class="serv-main-sentence">
-                <div>　</div>
-                <div>　生産終了や処分品の買取も行っております。</div>
-              </div>
-            </div>
-            <div class="serv-image-secondary">
-              <img src="{% static 'images/delivery-contents.webp' %}" alt="Delivery">
-            </div>
-          </div>
-        {% comment %} 第3コンテンツ未実施 {% endcomment %}
-          {% comment %} <div class="innr delayScroll">
-            <div class="serv-main-contents tertiary">
-              <h4>
-                <div>-03</div>
-              </h4>
-              <div class="block"></div>
-              <h3>
-                サービス名3
-              </h3>
-              <div class="block"></div>
-              <div class="serv-main-sentence">
-                <div>サービスの説明サービスの説明サービスの説明</div>
-                <div>サービスの説明サービスの説明サービスの説明</div>
-                <div>サービスの説明サービスの説明サービスの説明</div>
-              </div>
-            </div>
-            <div class="serv-image-tertiary">
-              <img src="{% static 'images/technology-contents.webp' %}" alt="Technology">
-            </div>
-          </div> {% endcomment %}
-        </div>
-      </section>
-      <div style="height:100px">
+      <svg viewBox="0 0 250 200" preserveAspectRatio="xMidYMid
+             slice">
+        <mask id="mask" x="0" y="0" width="100%" height="200px">
+          <rect x="0" y="0" width="100%" height="100%" />
+          <text x="20" y="110">Introduce</text>
+        </mask>
+        <rect x="0" y="0" width="100%" height="200px" />
+      </svg>
+    </div> {% endcomment %}
+    <div class="intro-image">
+      <div class="front">
+        <img src="{% static 'images/pc-contents.webp' %}" alt="PC">
+      </div>
+      <div class="back">
+        <img src="{% static 'images/track-contents.webp' %}" alt="Track">
       </div>
     </div>
+    <div class="intro-innr">
+      <h2 class="intro-heading">
+        <span class="intro-heading-contents">会社概要</span>
+      </h2>
+      <h3 class="intro-main">
+        <div class="intro-main-primary">設立年月　　　2021年3月</div>
+        <div class="block"></div>
+        <div class="intro-main-secondary">代表取締役　　飯田裕也</div>
+        <div class="block"></div>
+        <div class="intro-main-tertiary">年商　　　　　4000 万円
+          <div />
+          <div class="block"></div>
+          <div class="intro-main-tertiary">事業内容　　　EC 運営、処分品買取
+            <div />
+      </h3>
+    </div>
+</div>
+</section>
+<section class="serv-contents">
+  <div class="serve-main">
+    <div class="delayScroll">
+      <div class="serv-header">
+        <h2 class="serv-heading">
+          <span class="serv-heading-contents">サービス</span>
+        </h2>
+      </div>
+      <div class="innr">
+        <div class="serv-main-contents primary">
+          <h4>
+            <div>-01</div>
+          </h4>
+          <div class="block"></div>
+          <h3>
+            EC 運営
+          </h3>
+          <div class="block"></div>
+          <div class="serv-main-sentence">
+            <div>　日用品を中心として、</div>
+            <div>　家電,食品の幅広く販売しております。</div>
+            <div class="serv-url"><a href="https://www.amazon.com/sp?seller=A1D6J9Q8UCXAJD">ECサイトへ</a>　</div>
+          </div>
+        </div>
+        <div class="serv-image-primary">
+          <img src="{% static 'images/pc-contents2.webp' %}" alt="PC2">
+        </div>
+      </div>
+    </div>
+    <div class="innr delayScroll">
+      <div class="serv-main-contents secondary">
+        <h4>
+          <div>-02</div>
+        </h4>
+        <div class="block"></div>
+        <h3>
+          処分品買取
+        </h3>
+        <div class="block"></div>
+        <div class="serv-main-sentence">
+          <div>　</div>
+          <div>　生産終了や処分品の買取も行っております。</div>
+        </div>
+      </div>
+      <div class="serv-image-secondary">
+        <img src="{% static 'images/delivery-contents.webp' %}" alt="Delivery">
+      </div>
+    </div>
+    {% comment %} 第3コンテンツ未実施 {% endcomment %}
+    {% comment %} <div class="innr delayScroll">
+      <div class="serv-main-contents tertiary">
+        <h4>
+          <div>-03</div>
+        </h4>
+        <div class="block"></div>
+        <h3>
+          サービス名3
+        </h3>
+        <div class="block"></div>
+        <div class="serv-main-sentence">
+          <div>サービスの説明サービスの説明サービスの説明</div>
+          <div>サービスの説明サービスの説明サービスの説明</div>
+          <div>サービスの説明サービスの説明サービスの説明</div>
+        </div>
+      </div>
+      <div class="serv-image-tertiary">
+        <img src="{% static 'images/technology-contents.webp' %}" alt="Technology">
+      </div>
+    </div> {% endcomment %}
+  </div>
+</section>
+<div style="height:100px">
+</div>
+</div>
 {% include 'footer.html' %}
 {% endblock %}
 {% block extrajs %}
-    <script>
-      function delayScrollAnime() {
-         $('.delayScroll').each(function() {
-            let parent = this; //親要素を取得
-            let elemPos = $(this).offset().top; //要素の位置まで来たら
-            let scroll = $(window).scrollTop(); //スクロール値を取得
-            let windowHeight = $(window).height(); //画面の高さを取得
-            let child1 = $(this).children(); //子要素を取得
-            let windowWidth = $(window).width();
-            if (windowWidth <= 475) {} else if (scroll > elemPos + 150 - windowHeight) {
-              $(child1).each(function() {
-                $(this).addClass("active");
-                let child2 = $(this).children();
-                $(child2).each(function() {
-                  $(this).addClass("active");
-                });
-              });
-            }
+<script>
+  function delayScrollAnime() {
+    $('.delayScroll').each(function () {
+      let parent = this; //親要素を取得
+      let elemPos = $(this).offset().top; //要素の位置まで来たら
+      let scroll = $(window).scrollTop(); //スクロール値を取得
+      let windowHeight = $(window).height(); //画面の高さを取得
+      let child1 = $(this).children(); //子要素を取得
+      let windowWidth = $(window).width();
+      if (windowWidth <= 475) {} else if (scroll > elemPos + 150 - windowHeight) {
+        $(child1).each(function () {
+          $(this).addClass("active");
+          let child2 = $(this).children();
+          $(child2).each(function () {
+            $(this).addClass("active");
           });
-        }
-      // 画面をスクロールをしたら動かしたい場合の記述
-      $(window).scroll(function() {
-          delayScrollAnime();
-      }); // ここまで画面をスクロールをしたら動かしたい場合の記述
-      // 画面が読み込まれたらすぐに動かしたい場合の記述
-      $(window).on('load', function() {
-          delayScrollAnime();
-      }); // ここまで画面が読み込まれたらすぐに動かしたい場合の記述
-    </script>
+        });
+      }
+    });
+  }
+  // 画面をスクロールをしたら動かしたい場合の記述
+  $(window).scroll(function () {
+    delayScrollAnime();
+  }); // ここまで画面をスクロールをしたら動かしたい場合の記述
+  // 画面が読み込まれたらすぐに動かしたい場合の記述
+  $(window).on('load', function () {
+    delayScrollAnime();
+  }); // ここまで画面が読み込まれたらすぐに動かしたい場合の記述
+</script>
 {% endblock %}
