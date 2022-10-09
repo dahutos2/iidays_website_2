@@ -1,0 +1,215 @@
+@charset "UTF-8";
+
+.block {
+    height: 1rem
+}
+
+.intro-contents {
+    position: relative;
+    z-index: 0;
+    margin: 200px auto 0 auto;
+    width: 95%;
+    max-width: 1600px;
+}
+
+.intro-contents .intro-header {
+    width: 100%;
+}
+
+.intro-contents h2.intro-heading {
+    width: 50%;
+    position: relative;
+    margin: 0 25% 0 25%;
+    text-align: center;
+    display: inline-block;
+}
+
+.intro-contents h2.intro-heading:before {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    content: '';
+    background: #000
+}
+
+.intro-contents h2.intro-heading span {
+    height: 100%;
+    position: relative;
+    padding: 0 1em;
+    font-size: 5rem;
+    background: #fff;
+    vertical-align: middle
+}
+
+/* introduce画像削除 */
+/* .wrapper {
+    position: relative;
+    width: 50%;
+    height: 200px;
+    margin-left: auto;
+    z-index: 999;
+    opacity: 0;
+    box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, .2);
+    transition: 0.5s opacity 0.5s
+}
+
+.wrapper.active {
+    opacity: 1
+}
+
+.wrapper .image {
+    width: 100%;
+    height: 100%
+}
+
+.wrapper video {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover
+}
+
+.wrapper svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%
+}
+
+.wrapper svg text {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 900;
+    font-size: 40px
+}
+
+.wrapper svg>rect {
+    -webkit-mask: url(#mask);
+    mask: url(#mask)
+}
+
+.wrapper svg rect {
+    height: 600px;
+    fill: #fff
+} */
+
+.intro-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: 50px;
+    margin-left: 15%;
+    width: 40%;
+    height: 400px;
+    transform-style: preserve-3d;
+    transition: transform 1.5s, opacity 1.5s;
+}
+
+.intro-image:hover {
+    transform: rotateY(180deg)
+}
+
+.intro-image div {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden
+}
+
+.front {
+    width: 100%;
+    height: 100%;
+    z-index: 2
+}
+
+.back {
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    transform: rotateY(180deg)
+}
+
+.intro-image .front img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover
+}
+
+.intro-image .back img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: rotateY(180deg)
+}
+
+.intro-inner {
+    display: flex;
+    flex-flow: column;
+    align-items: flex-end;
+    margin-top: 60px;
+    width: 100%;
+    height: 400px
+}
+
+.intro-inner h2 {
+    width: 40%;
+    position: relative;
+    text-align: right;
+}
+
+.intro-inner h2:before {
+    position: absolute;
+    top: calc(50% - 1px);
+    left: 0;
+    width: 100%;
+    height: 2px;
+    content: '';
+    background: #000
+}
+
+.intro-inner h2 span {
+    position: relative;
+    padding: 0 1em;
+    font-size: 5rem;
+    background: #fff
+}
+
+.intro-inner .intro-main {
+    display: inline-block;
+    padding-top: 40px;
+    padding-right: 5%;
+    font-size: 2rem;
+    letter-spacing: .3rem;
+    font-family: Georgia, serif;
+}
+@media screen and (max-width:1200px) {
+    .intro-contents h2.intro-heading {
+        width: 70%;
+        margin: 0 15% 0;
+    }
+}
+@media screen and (max-width:800px) {
+    .intro-contents h2.intro-heading {
+        width: 80%;
+        margin: 0 10% 0;
+    }
+
+    .service-contents h2.service-heading span {
+        font-size: 4rem;
+    }
+}
+@media screen and (max-width:400px) {
+    .service-contents h2.service-heading {
+        width: 85%;
+        margin: 0 7.5% 0;
+    }
+
+    .service-contents h2.service-heading span {
+        font-size: 3rem;
+    }
+    
+}

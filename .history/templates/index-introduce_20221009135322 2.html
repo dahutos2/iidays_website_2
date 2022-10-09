@@ -1,0 +1,31 @@
+{% load static %}
+{% block extrastyle %}
+  <link rel="stylesheet" type="text/css" href="{% static 'css/index-introduce.css' %}"/>
+{% endblock %}
+<section class="intro-contents">
+  <div class="intro-header">
+    <h2 class="intro-heading">
+      <span class="intro-heading-contents">会社概要</span>
+    </h2>
+  </div>
+  <div class="inner">
+    <!-- 会社概要画像 -->
+    <div class="intro-image">
+      <div class="front">
+        <img src="{% static 'images/pc-contents.webp' %}" alt="PC">
+      </div>
+      <div class="back">
+        <img src="{% static 'images/track-contents.webp' %}" alt="Track">
+      </div>
+    </div>
+    <!-- 会社概要 -->
+    <div class="intro-main">
+      <div class="intro-main-primary">設立年月 2021年3月</div>
+      <div class="intro-main-secondary">代表取締役 飯田裕也</div>
+      <div class="intro-main-tertiary">年商 4000 万円
+      </div>
+      <div class="intro-main-tertiary">事業内容 EC 運営、処分品買取
+      </div>
+    </div>
+  </div>
+</section>
