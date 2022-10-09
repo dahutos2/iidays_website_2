@@ -1,0 +1,52 @@
+{% load static %}
+{% block extrastyle %}
+  <link rel="stylesheet" type="text/css" href="{% static 'css/index-service.css' %}"/>
+{% endblock %}
+<section class="service-contents">
+  <div class="service-header">
+    <h2 class="service-heading">
+      <span class="serice-heading-contents">事業内容</span>
+    </h2>
+  </div>
+  <div class="inner">
+    <div class="service-main-contents primary">
+      <div class="block"></div>
+      <h3>
+        EC 運営
+      </h3>
+      <div class="block"></div>
+      <div class="service-main-sentence">
+        <div>
+          日用品を中心として、</div>
+        <div>
+          家電,食品の幅広く販売しております。</div>
+        <div class="service-url">
+          <a href="https://www.amazon.com/sp?seller=A1D6J9Q8UCXAJD">ECサイトへ</a>
+        </div>
+      </div>
+    </div>
+    <div class="service-image-primary">
+      <img src="{% static 'images/pc-contents2.webp' %}" alt="PC2">
+    </div>
+  </div>
+  <div class="inner">
+    <div class="service-main-contents secondary">
+      <h4>
+        <div>-02</div>
+      </h4>
+      <div class="block"></div>
+      <h3>
+        処分品買取
+      </h3>
+      <div class="block"></div>
+      <div class="service-main-sentence">
+        <div></div>
+        <div>
+          生産終了や処分品の買取も行っております。</div>
+      </div>
+    </div>
+    <div class="service-image-secondary">
+      <img src="{% static 'images/delivery-contents.webp' %}" alt="Delivery">
+    </div>
+  </div>
+</section>

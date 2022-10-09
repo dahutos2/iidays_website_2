@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load tag_library %}
+{% load static %}
+{% load widget_tweaks %}
+{% block extrastyle %}
+  <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}"/>
+{% endblock %}
+{% block main %}
+  <div class="main-contents">
+    {% include 'index-introduce.html' %}
+    {% include 'index-introduce.html' %}
+    <div style="height:100px"></div>
+  </div>
+  {% include 'footer.html' %}
+{% endblock %}
+{% block extrajs %}
+  <script>
+    function delayScrollAnime() {
+      $('.delayScroll').each(function () {
+        let parent = this; //親要素を取得
+        let elemPos = $(this)
+          .offset()
+          .top; //要素の位置まで来たら
+        let scroll = $(window).scrollTop(); //スクロール値を取得
+        let windowHeight = $(window).height(); //画面の高さを取得
+        let child1 = $(this).children(); //子要素を取得
+        let windowWidth = $(window).width();
+        if (windowWidth <= 475) {} else if (scroll > elemPos + 150 - windowHeight) {
+          $(child1).each(function () {
+            $(this).addClass("active");
+            let child2 = $(this).children();
+            $(child2).each(function () {
+              $(this).addClass("active");
+            });
+          });
+        }
+      });
+    }
+    // 画面をスクロールをしたら動かしたい場合の記述
+    $(window).scroll(function () {
+      delayScrollAnime();
+    }); // ここまで画面をスクロールをしたら動かしたい場合の記述
+    // 画面が読み込まれたらすぐに動かしたい場合の記述
+    $(window).on('load', function () {
+      delayScrollAnime();
+    }); // ここまで画面が読み込まれたらすぐに動かしたい場合の記述
+  </script>
+{% endblock %}

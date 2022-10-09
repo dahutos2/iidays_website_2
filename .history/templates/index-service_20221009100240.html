@@ -1,0 +1,75 @@
+{% load static %}
+{% block extrastyle %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/index-service.css' %}" />
+{% endblock %}
+<section class="service-contents">
+  <div class="service-main">
+    <div class="delayScroll">
+      <div class="service-header">
+        <h2 class="service-heading">
+          <span class="serice-heading-contents">事業内容</span>
+        </h2>
+      </div>
+      <div class="inner">
+        <div class="service-main-contents primary">
+          <h4>
+            <div>-01</div>
+          </h4>
+          <div class="block"></div>
+          <h3>
+            EC 運営
+          </h3>
+          <div class="block"></div>
+          <div class="service-main-sentence">
+            <div>　日用品を中心として、</div>
+            <div>　家電,食品の幅広く販売しております。</div>
+            <div class="serv-url"><a href="https://www.amazon.com/sp?seller=A1D6J9Q8UCXAJD">ECサイトへ</a>　</div>
+          </div>
+        </div>
+        <div class="service-image-primary">
+          <img src="{% static 'images/pc-contents2.webp' %}" alt="PC2">
+        </div>
+      </div>
+    </div>
+    <div class="inner delayScroll">
+      <div class="service-main-contents secondary">
+        <h4>
+          <div>-02</div>
+        </h4>
+        <div class="block"></div>
+        <h3>
+          処分品買取
+        </h3>
+        <div class="block"></div>
+        <div class="service-main-sentence">
+          <div>　</div>
+          <div>　生産終了や処分品の買取も行っております。</div>
+        </div>
+      </div>
+      <div class="service-image-secondary">
+        <img src="{% static 'images/delivery-contents.webp' %}" alt="Delivery">
+      </div>
+    </div>
+    {% comment %} 第3コンテンツ未実施 {% endcomment %}
+    {% comment %} <div class="innr delayScroll">
+      <div class="service-main-contents tertiary">
+        <h4>
+          <div>-03</div>
+        </h4>
+        <div class="block"></div>
+        <h3>
+          サービス名3
+        </h3>
+        <div class="block"></div>
+        <div class="service-main-sentence">
+          <div>サービスの説明サービスの説明サービスの説明</div>
+          <div>サービスの説明サービスの説明サービスの説明</div>
+          <div>サービスの説明サービスの説明サービスの説明</div>
+        </div>
+      </div>
+      <div class="service-image-tertiary">
+        <img src="{% static 'images/technology-contents.webp' %}" alt="Technology">
+      </div>
+    </div> {% endcomment %}
+  </div>
+</section>
