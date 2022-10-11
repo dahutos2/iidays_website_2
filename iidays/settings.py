@@ -163,6 +163,6 @@ AUTH_USER_MODEL = 'home.User'
 
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'dahutos2@gmail.com'
-EMAIL_HOST_PASSWORD = 'pbonspuxakfennjg'
+EMAIL_HOST_USER = 'iidayscontact@gmail.com'
+EMAIL_HOST_PASSWORD = 'cobslxpjgdjppccz'
 EMAIL_USE_TLS = True
